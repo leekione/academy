@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input.bg_green{
+            background-color: green;
+        }
+        input.bg_red{
+            background-color: red;
+        }
+        #yunsan {
+            width: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input id="x" type="text">
+    <input id="yunsan" type="text">
+    <input id="y" type="text">=
+    <input id="userAnswer" type="text">
+    <button id="btnResult">결과 확인</button>
+    <button id="btnReplay">다시 풀기</button>
+    <select name="calculator" id="cal">
+        <option value="">===선택===</option>
+        <option value="+">덧셈</option>
+        <option value="-">뺄셈</option>
+        <option value="*">곱셈</option>
+        <option value="/">나눗셈</option>
+        
+    </select>
+    <div id="msg"></div>
+    <script>
+        const x = Math.floor(Math.random()*1000)+1;
+        const y = Math.floor(Math.random()*1000)+1;
+        // console.log(x+y);
+        const $x = document.getElementById('x');
+        const $y = document.getElementById('y');
+
+        $x.value = x;
+        $y.value = y;
+
+        //연산기호 입력
+        const $yunsan = document.getElementById('yunsan');
+        const $cal = document.getElementById('cal');
+        $cal.addEventListener('click', e=>{
+           
+            $yunsan.value = e.target.value;
+            userInput.value = ''; 
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+
+        })
+        
+        //결과 확인 버튼
+        const $btnResult = document.getElementById('btnResult');
+        $btnResult.addEventListener('click', result_f);
+        const userInput = document.getElementById('userAnswer');
+        function result_f(evt){
+            console.log('결과 확인버튼 클릭');
+            if($yunsan.value == "+"){
+            const resultOfComputer = parseInt($x.value) + parseInt($y.value);
+            console.log(resultOfComputer);
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+            } else if($yunsan.value == "-"){
+                resultOfComputer = parseInt($x.value) - parseInt($y.value);
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+            } else if($yunsan.value == "*"){
+                resultOfComputer = parseInt($x.value) * parseInt($y.value);
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+            }else if($yunsan.value == "/"){
+                resultOfComputer = Math.round((parseInt($x.value) / parseInt($y.value))*100)/100;
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+            }
+     
+
+          
+        }
+        //다시풀기 버튼
+        const $btnReplay = document.getElementById('btnReplay');
+        $btnReplay.addEventListener('click', replay_f);
+
+        function replay_f(evt){
+            console.log('다시풀기 버튼 클릭');
+            $x.value = Math.floor(Math.random()*1000)+1;
+            $y.value = Math.floor(Math.random()*1000)+1;
+            console.log('덧셈 : ' + (parseInt($x.value)+parseInt($y.value)));
+            console.log('뺄셈 : ' + (parseInt($x.value)-parseInt($y.value)));
+            console.log('곱셈 : ' + (parseInt($x.value)*parseInt($y.value)));
+            console.log('나눗셈 : ' + Math.round(((parseInt($x.value)/parseInt($y.value)))*100)/100);
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+            userInput.value = ''; 
+        }
+        
+
+    </script>
+</body>
+</html>

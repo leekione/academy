@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            
+            background: rgb(31,242,151);
+            background: linear-gradient(90deg, rgba(31,242,151,1) 0%, rgba(65,224,174,1) 23%, rgba(205,207,34,1) 67%, rgba(247,255,0,1) 100%);
+            height: 100vh;
+        }
+        #box {
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+           
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 13px 10px 15px 5px #ccc;
+
+            animation-name: rotation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-direction: alternate;
+
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,e6f8fd+30,fdffff+50,fdffff+50,c8eefb+54,bee4f8+75,b1d8f5+100 */
+            background: #e1ffff; /* Old browsers */
+            background: -moz-linear-gradient(left,  #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #e6f8fd 30%, #fdffff 50%, #fdffff 50%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#fdffff 50%,#fdffff 50%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#fdffff 50%,#fdffff 50%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 */
+
+        }
+        #box:hover {
+            animation-play-state: paused;
+        }
+        #box h1 {
+            line-height: 200px;
+        }
+@keyframes rotation {
+    0% {
+        top: 0;
+        left: 100px;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 400px;
+        left: 400px;
+        transform: rotate(90deg);
+    }
+    75% {
+        top: 200px;
+        left: 400px;
+    }
+    100% {
+        top: 400px;
+        left: 400px;
+        transform: rotate(-360deg);
+
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Rotation</h1>
+    </div>
+</body>
+</html>

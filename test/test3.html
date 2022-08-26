@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {outline: 1px solid black;}
+        ul,li {
+            margin: 0; padding: 0;
+            list-style: none;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container .product .product__item {
+            flex-basis: 150px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        #container .product .product__item img {
+            width: 100%;
+            height: 300px;
+        }
+        #container .product .product__item .profile .profile__contents {
+            position: absolute; /* 부모요소중에 static이 아닌 요소를 기준잡는다 */
+            bottom: 0;
+            left: 0;
+        }
+        #container .product .product__item .profile .profile__contents p {
+            max-height: 0;
+            opacity: 0;
+            transition: all 1s;
+        }
+        #container .product .product__item:hover .profile .profile__contents p {
+            max-height: 100px;
+            opacity: 0.8;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="product">
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2020/04/13/10/48/coffee-5037804__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellat rem explicabo architecto. Unde quam facilis quo iusto porro quasi officiis perferendis. Ipsa atque quisquam, exercitationem dolor eligendi est nisi.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533__480.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, atque ab. Pariatur ratione praesentium perspiciatis rem sed! Quis vero atque odit, delectus, cumque sapiente corporis natus quas, ipsum voluptatum eum!</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/29/17/14/drink-1487304__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>lorem2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo doloribus autem temporibus, omnis fuga incidunt libero voluptas quibusdam laborum tempore, dolorem maiores blanditiis recusandae saepe non illum a hic!</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

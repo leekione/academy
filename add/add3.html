@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input.bg_green{
+            background-color: green;
+        }
+        input.bg_red{
+            background-color: red;
+        }
+        #yunsan {
+            width: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input id="x" type="text">
+    <input id="yunsan" type="text">
+    <input id="y" type="text">=
+    <input id="userAnswer" type="text">
+    <button id="btnResult">결과 확인</button>
+    <button id="btnReplay">다시 풀기</button>
+    <input id="plus" type="radio" name="cal"><label for="plus">덧셈</label>
+    <input id="minus" type="radio" name="cal"><label for="minus">뺄셈</label>
+    <input id="multi" type="radio" name="cal"><label for="multi">곱셈</label>
+    <input id="divide" type="radio" name="cal"><label for="divide">나눗셈</label>
+    <script>
+        const x = Math.floor(Math.random()*1000+1);
+        const y = Math.floor(Math.random()*1000+1);
+        // console.log(x+y);
+        const $x = document.getElementById('x');
+        const $y = document.getElementById('y');
+
+        $x.value = x;
+        $y.value = y;
+
+        const userInput = document.getElementById('userAnswer');
+
+        const $radio = document.getElementById('yunsan');       
+        //더하기 버튼
+        const $btnPlus = document.getElementById('plus');
+        $btnPlus.addEventListener('click', plus_f);
+        function plus_f(evt){
+            $radio.value = "+";
+            console.log(parseInt($x.value)+parseInt($y.value));
+            console.log('덧셈버튼 클릭');
+            console.log(evt.target.id)
+            userInput.value = ''; 
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+        }
+        //뺄셈 버튼
+        const $btnMinus = document.getElementById('minus');
+        $btnMinus.addEventListener('click', minus_f);
+        function minus_f(evt){
+            $radio.value = "-";
+            console.log($x.value-$y.value);
+            console.log('뺄셈버튼 클릭');
+            userInput.value = ''; 
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+        }
+        //곱셈 버튼
+        const $btnMulti = document.getElementById('multi');
+        $btnMulti.addEventListener('click', multi_f);
+        function multi_f(evt){
+            $radio.value = "*";
+            console.log($x.value*$y.value);
+            console.log('곱셈버튼 클릭');
+            userInput.value = ''; 
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+        }
+        //나눗셈 버튼
+        const $btnDivide = document.getElementById('divide');
+        $btnDivide.addEventListener('click', divide_f);
+        function divide_f(evt){
+            $radio.value = "/";
+            console.log(Math.round((($x.value/$y.value))*100)/100);
+            console.log('나눗셈버튼 클릭');
+            userInput.value = ''; 
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+        }
+        //결과 확인 버튼
+        const $btnResult = document.getElementById('btnResult');
+        $btnResult.addEventListener('click', result_f);
+        
+
+        function result_f(evt){
+            console.log('결과 확인버튼 클릭');
+            //더하기 버튼
+            if($radio.value == "+"){
+            const resultOfComputer = parseInt($x.value) + parseInt($y.value);
+            console.log(resultOfComputer);
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+                //빼기 버튼
+            } else if($radio.value == "-"){
+                resultOfComputer = parseInt($x.value) - parseInt($y.value);
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+                //곱하기 버튼
+            } else if($radio.value == "*"){
+                resultOfComputer = parseInt($x.value) * parseInt($y.value);
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+                //나누기 버튼
+            }else if($radio.value == "/"){
+                resultOfComputer = Math.round((parseInt($x.value) / parseInt($y.value))*100)/100;
+                console.log(resultOfComputer)
+                if(resultOfComputer == userInput.value){
+                    console.log('같다');
+                    userInput.classList.add('bg_green');
+                    userInput.classList.remove('bg_red');
+                    
+                }else {
+                    console.log('다르다');
+                    userInput.classList.add('bg_red');
+                    userInput.classList.remove('bg_green');
+                    
+                        if(userInput.value === '' ) {
+                        console.log('공백');
+                        userInput.classList.remove('bg_red');
+                        }
+                }
+            } 
+        }
+        //다시풀기 버튼
+        const $btnReplay = document.getElementById('btnReplay');
+        $btnReplay.addEventListener('click', replay_f);
+
+        function replay_f(evt){
+            console.log('다시풀기 버튼 클릭');
+            $x.value = Math.floor(Math.random()*1000+1);
+            $y.value = Math.floor(Math.random()*1000+1);
+            console.log('덧셈 : ' + (parseInt($x.value)+parseInt($y.value)));
+            console.log('뺄셈 : ' + (parseInt($x.value)-parseInt($y.value)));
+            console.log('곱셈 : ' + (parseInt($x.value)*parseInt($y.value)));
+            console.log('나눗셈 : ' + Math.round(((parseInt($x.value)/parseInt($y.value)))*100)/100);
+       
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+            userInput.value = ''; 
+        }
+    </script>
+</body>
+</html>

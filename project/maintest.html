@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+     
+        header .topmenu {
+            display: flex;
+            justify-content: end;
+            
+        }
+        header .topmenu span {
+            margin: 5px 5px;
+            padding: 5px 5px;
+        }
+
+        header .logo img{
+            width: 300px;
+            height: 100px;
+            object-fit: cover;
+            display: block;
+            margin: 0px auto;
+        }
+        header .gnb{
+            display: flex;
+            justify-content: space-between;
+            
+           
+        }
+
+        header .gnb > ul{
+            display: flex;
+            margin-bottom: 20px;
+            z-index: 1;
+            
+        }
+
+        header .gnb > ul > li {
+           background-color: rgb(224, 224, 224);
+           position: relative;  
+           margin: 5px;
+           width: 100%;
+           font-size: 1.3em;
+        }
+        header .gnb ul li:hover {
+            cursor: pointer;
+        }
+        header .gnb ul li:hover > ul{
+            display: block;
+        }
+        header .gnb > ul > li > ul {
+            position: absolute;
+            text-align: center;
+            display: none;
+            width: 100%;
+        }
+        header .gnb > ul > li > ul > li {
+            background-color: rgb(224, 224, 224);font-size: 0.8em;
+          
+        }
+        header .gnb > ul > li > ul > li:hover{
+            background-color: gray;
+        }
+        figure {
+            position:  relative;
+            width: 100vw;
+            margin: 0px auto;
+
+        }
+        figure figcaption {
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            color: #fff;
+            font-size: 1.5em;
+        }
+        figure img {
+            width: 100%;
+            height: 250px;
+            margin: 20px 0px;
+        }
+        p {
+            font-size: 3em;
+            text-align: center;
+        }
+        main section {
+            display: flex;
+            /* justify-content: space-evenly; */
+        margin: auto;
+            
+            flex-wrap : wrap;
+           
+            
+        }
+        
+        main section div {
+            text-align: center;
+            border: 1px solid black;
+        }
+        main .menu article {
+            margin-right: 100px ;
+            /* margin: 0px auto; */
+
+            
+        }
+        main section article img {
+            border: 1px solid black
+        }
+        footer {
+            font-size: 2em;
+            text-align: center;
+            background-color: azure;
+        }
+        /* #wrapper {
+            width: 80vw;
+            margin: 0px auto;
+        } */
+        header {
+            width: 80vw;
+            margin: 0px auto;
+            border-bottom: 2px solid black;
+        }
+       main{
+        width: 1500px;
+        height: 700px;
+        margin: 0px auto;
+        
+       }
+        main .menu{
+            width: 1200px;
+            margin: auto;
+        }
+    
+    </style>
+</head>
+<body id="wrapper">
+    <header>
+        <div class="topmenu"> 
+            <span>회원가입</span>
+            <span>로그인</span>
+            <span>고객센터</span>
+        </div>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="">
+        </div>
+            <div class="gnb">
+                <ul>
+                    <li>업종별 카테고리
+                        <ul>
+                            <li>한식</li>
+                            <li>중식</li>
+                            <li>일식</li>
+                            <li>양식</li>
+                            <li>아시안식</li>
+                            <li>분식</li>
+                            <li>도시락</li>
+                            <li>카페/디저트</li>
+                            <li>전체</li>
+                        </ul>
+                    </li>
+                    <li>지역별 카테고리
+                        <ul>
+                            <li><a href="https://www.seoul.go.kr/main/index.jsp" target="blank">서울</a></li>
+                            <li>인천</li>
+                            <li>부산</li>
+                            <li>울산</li>
+                            <li>대구</li>
+                            <li>대전</li>
+                            <li>광주</li>   
+                            <li>제주</li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- <input type="search"> -->
+            </div>
+        </div>
+    </header>
+    <figure>
+        <figcaption>
+            <h3>오늘은 뭐 먹지?</h3>
+        </figcaption>
+        <img src="https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875__340.jpg" alt="">
+    </figure>
+    <p>오늘의 마감 할인!</p>
+    <main>
+        <section class="menu">
+            <article><a href="http://www.naver.com" target="blank"><img src="../img/bread.jpg" alt=""></a>
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+                    <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+                   <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+                    <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+               
+                   <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+                 <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                    </article>
+                  <article><img src="../img/bread.jpg" alt="">
+                        <div>무거동 참치 김밥</div>
+                        <div>33% 1,500원</div>
+                        <div>마감 시간 6:00 pm</div>
+                  </article>
+        </section>
+    </main>
+    <footer>
+        copyright ⓒ my home
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+body {
+    margin: 0; padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul,li { margin: 0; padding: 0; list-style: none;}
+
+.wrapper {
+    width: 100%;
+}
+
+/* 최상위 메뉴*/
+.wrapper .top {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    background-color: black;
+
+}
+.wrapper .top .top-menu {
+    display: flex;
+    width: 600px;
+    justify-content: end;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+
+/*헤더 배너 이미지 */
+.banner {
+    display: flex;
+    justify-content: center;
+}
+.banner .banner-img {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 600px;
+    height: 150px;
+}
+.banner .banner-img img {
+    width: 100%;
+}
+
+/* 메인메뉴*/
+.gnb {
+    display: flex;
+    justify-content: center;
+
+}
+.gnb .menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 600px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.gnb .menu .menu-item:hover{
+    text-decoration: underline;
+}
+
+/* 메인 */
+.main {
+    display: flex;
+    justify-content: center;
+}
+.main .main-content {
+    display: flex;
+    width: 600px;
+
+/* 메인 좌측 */
+}
+.main .main-content .left-content {
+    flex: 1;
+    background-color: lightskyblue;
+
+/*메인 우측 */   
+}
+.main .main-content .right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 4;
+    background-color: lightcyan;
+}
+
+.main .main-content .right-content .sign.up {
+    letter-spacing: 0.5em;
+    margin: 10px;
+}
+.main .main-content .right-content .sign-item {
+    background-color: white;
+    width: 250px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.main .main-content .right-content .sign-item p {
+    margin: 0.3px;
+}
+
+.main .main-content .right-content input[type="text"], input[type="password"], input[type="tel"] {
+    width: 230px;
+}
+.main .main-content .right-content input[type="radio"] {
+    margin: 0;
+}
+.main .main-content .right-content input[type="checkbox"] {
+    margin: 0;
+    width: 13px;
+    height: 13px;
+}
+.main .main-content .right-content input[type="checkbox"]+label {
+    font-size: 15px;
+}
+
+.main .main-content .right-content input[type="date"] {
+    width: 230px;
+}
+.main .main-content .right-content .sign-item .btnsign {
+    border :none;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    width: 240px;
+    margin: 20px 0px;
+    background-color: green;
+}
+
+/*푸터*/
+.footer {
+    display: flex;
+    justify-content: center;
+}
+.footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 70px;
+    background-color: gray;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;  
+}

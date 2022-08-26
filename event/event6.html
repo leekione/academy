@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li {margin: 0; padding: 0; list-style: none;}
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <fieldset>
+            <ledend>취미</ledend>
+            <div class="select--all">
+                <input type="checkbox" name="" id="allChk"><span>전체선택</span>
+            </div>
+            <ul class="hobby">
+                <li class="hobby__item">
+                    <input type="checkbox" name="hobby" id="" value="취미1"><span>취미1</span>
+                </li>
+                <li class="hobby__item">
+                    <input type="checkbox" name="hobby" id="" value="취미2"><span>취미2</span>
+                </li>
+                <li class="hobby__item">
+                    <input type="checkbox" name="hobby" id="" value="취미3"><span>취미3</span>
+                </li>
+            </ul>
+            <div class="btngrp">
+                <button class="btn btn__del">삭제</button>
+            </div>
+        </fieldset>
+        <div id="msg">취미1 취미2를 삭제하였습니다</div>
+    </div>
+
+    <script>
+        //이벤트 핸들러
+        //1)전체선택
+        const allChkClick_h = e =>{
+            console.log(`click : ${e.target}`);
+
+            const $hobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+            console.log($hobbies);
+
+            $hobbies.forEach ($hobby => $hobby.checked = e.target.checked ? true : false);
+        } 
+        //2)삭제버튼
+        const btnDel_h = e => {
+            console.log('삭제버튼 클릭');
+            const answer = window.confirm('삭제하시겠습니까?');
+            const $chkhobbies = document.querySelectorAll('.hobby__item input[type=checkbox]');
+            
+            if(answer){
+                for(let chkhobby of $chkhobbies){
+                // console.log(chkhobby);
+                let str = '';
+                if(chkhobby.checked){
+                    str += `${chkhobby.value},`;
+                    str = `${str}를 삭제하였습니다`;
+                            console.log(chkhobby.value);
+                            chkhobby.checked = false;
+                        }
+                        document.getElementById('msg').textContent = str;
+                    }
+            };
+        }
+
+
+
+        //이벤트등록
+        //1)전체선택버튼
+        document.getElementById('allChk')
+                .addEventListener('click', allChkClick_h);
+
+        //2)삭제버튼
+        document.querySelector('.btn.btn__del')
+                .addEventListener('click', btnDel_h);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴를 선택하면 선택한 li메뉴 배경색을 노란색으로 적용하기</title>
+    <style>
+        * {outline: 1px solid black;}
+
+        .active {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="menu">
+            <li class="menu__item" data-selected-menu="m1">menu1</li>
+            <li class="menu__item" data-selected-menu="m2">menu2</li>
+            <li class="menu__item" data-selected-menu="m3">menu3</li>
+        </ul>
+        <div id="msg">메뉴를 선택했습니다</div>
+    </div>
+    <script>
+           
+        const click_h = e => {
+            const $ul = document.querySelectorAll('.menu .menu__item');
+            console.log('클릭');
+            document.getElementById('msg').textContent = (`${e.target.textContent} 메뉴를 선택했습니다.`)
+
+            for (let i = 0; i < $ul.length; i++) {
+                const item = $ul[i];
+                if(item == e.target){
+                    item.classList.add('active');
+                }else{
+                    item.classList.remove('active');
+                }
+            };
+        };
+            document.querySelector('.menu').addEventListener('click', click_h);
+
+
+    </script>
+</body>
+</html>

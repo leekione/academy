@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li {margin: 0; padding: 0; list-style: none;}
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <fieldset>
+            <ledend>취미</ledend>
+            <div class="select--all">
+                <input type="checkbox" name="" id=""><span>전체선택</span>
+            </div>
+            <ul class="hobby">
+                <li class="hobby_item">
+                    <input type="checkbox" name="" id=""><span>취미1</span>
+                </li>
+                <li class="hobby_item">
+                    <input type="checkbox" name="" id=""><span>취미2</span>
+                </li>
+                <li class="hobby_item">
+                    <input type="checkbox" name="" id=""><span>취미3</span>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+    <script>
+
+        const selectAll = e =>{
+            console.log('클릭');
+            // const $all = document.querySelector('.select--all');
+            const $hobbies = document.querySelectorAll('.hobby_item input[type=checkbox');
+            console.log($hobbies);
+            const isChecked = e.target.checked;
+            console.log(isChecked);
+            for(let $hobby of $hobbies){
+                if(isChecked){
+                    $hobby.setAttribute('checked', 'checked')
+                }else{
+                    $hobby.removeAttribute('checked');
+                }
+            }
+        }
+
+        document.querySelector('.select--all input[type=checkbox').addEventListener('change', selectAll);
+    </script>
+</body>
+
+</html>

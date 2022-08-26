@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="top-menu">
+                <a href="#">로그인</a>
+                <label for="">&nbsp|&nbsp</label>
+                <a href="#">회원가입</a>
+            </div>
+        </div>
+            <header class="banner">
+                <figure class="banner-img">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/06/18/home-office-1867761__340.jpg" alt="">
+                </figure>
+            </header>
+            <nav class="gnb">
+                <ul class="menu">
+                    <li class="menu-item"><a href="#">웹표준</a></li>
+                    <li class="menu-item"><a href="#">자바</a></li>
+                    <li class="menu-item"><a href="#">안드로이드</a></li>
+                    <li class="menu-item"><a href="#">데이터베이스</a></li>
+                    <li class="menu-item"><a href="#">스프링</a></li>
+                </ul>
+            </nav>
+            <main class="main">
+                <section class="main-content">
+                    <aside class="left-content"></aside>
+                    <article class="right-content">
+                        <h3 class="sign up">회원가입</h3>
+                        <form class="sign-item">
+                            <p><label for="userId">아이디</label></p>
+                            <input type="text" id="userId">
+
+                            <p><label for="userPwd">비밀번호</label></p>
+                            <input type="password" id="userPwd">
+
+                            <p><label for="userPwdChk">비밀번호확인</label></p>
+                            <input type="password" id="userPwdChk">
+
+                            <p><label for="telNumber">전화번호</label></p>
+                            <input type="tel" id="telNumber">
+
+                            <p><label for="nickname">별칭</label></p>
+                            <input type="text" id="nickname">
+
+                            <p><label for="">지역</label></p>
+                            <select name="" id="">
+                                <option value="">== 선택 ==</option>
+                                <option value="서울">서울</option>
+                                <option value="부산">부산</option>
+                                <option value="대구">대구</option>
+                                <option value="대전">대전</option>
+                                <option value="울산">울산</option>
+                            </select>
+
+                            <p><label for="">성별</label></p>
+                                <input type="radio" name="gender" id="남자"><label for="남자">남자</label>
+                                <input type="radio" name="gender" id="여자"><label for="여자">여자</label>
+
+                            <p><label for="">취미</label></p>
+                            <input class="hobby"type="checkbox" name="hobby" id="독서"><label for="독서">독서</label>
+                            <input class="hobby"type="checkbox" name="hobby" id="음악감상"><label for="음악감상">음악감상</label>
+                            <input class="hobby"type="checkbox" name="hobby" id="운동"><label for="운동">운동</label>
+                            <input class="hobby"type="checkbox" name="hobby" id="게임"><label for="게임">게임</label>
+
+                            <p><label for="생년월일">생년월일</label></p>
+                            <input type="date" id="생년월일">
+                            
+                            <p><button class="btnsign">회원가입</button></p>
+                        </form>
+                    </article>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="footer-content">Cpyringt by Gildong Hong. All Rignt Reserved.</div>
+            </footer>
+    </div>
+</body>
+</html>

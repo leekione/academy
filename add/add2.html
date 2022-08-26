@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input.bg_green{
+            background-color: green;
+        }
+        input.bg_red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input id="x" type="text">+
+    <input id="y" type="text">=
+    <input id="userAnswer" type="text">
+    <button id="btnResult">결과 확인</button>
+    <button id="btnReplay">다시 풀기</button>
+    <script>
+        const x = Math.floor(Math.random()*1000)+1;
+        const y = Math.floor(Math.random()*1000)+1;
+        console.log(x+y);
+        const $x = document.getElementById('x');
+        const $y = document.getElementById('y');
+
+        $x.value = x;
+        $y.value = y;
+
+        //결과 확인 버튼
+        const $btnResult = document.getElementById('btnResult');
+        $btnResult.addEventListener('click', result_f);
+
+        function result_f(evt){
+            console.log('결과 확인버튼 클릭');
+            const resultOfComputer = parseInt($x.value) + parseInt($y.value);
+            console.log(resultOfComputer);
+            const userInput = document.getElementById('userAnswer');
+
+            
+            if(resultOfComputer == userInput.value){
+                console.log('같다');
+                userInput.classList.add('bg_green');
+                userInput.classList.remove('bg_red');
+                
+            }else {
+                console.log('다르다');
+                userInput.classList.add('bg_red');
+                userInput.classList.remove('bg_green');
+                //답안이 작성되지 않은 상태에는 결과확인을 할 수 없다
+                    if(userInput.value.trim().length == 0 ) {
+                    console.log('공백');
+                    userInput.classList.remove('bg_red');
+                    }
+            }
+        }
+        //다시풀기 버튼
+        const $btnReplay = document.getElementById('btnReplay');
+        $btnReplay.addEventListener('click', replay_f);
+
+        function replay_f(evt){
+            console.log('다시풀기 버튼 클릭');
+            $x.value = Math.floor(Math.random()*1000)+1;
+            $y.value = Math.floor(Math.random()*1000)+1;
+            console.log(parseInt($x.value)+parseInt($y.value));
+            const userInput = document.getElementById('userAnswer');
+            userInput.classList.remove('bg_green');
+            userInput.classList.remove('bg_red');
+            userInput.value = ''; 
+        }
+      
+
+    </script>
+</body>
+</html>
