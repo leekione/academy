@@ -44,7 +44,7 @@ const tmpData = {
 
 {
     const result = Object.entries(tmpData)
-                         .filter(entry=>entry[1].completed)
+                         .filter(entry=>!entry[1].completed)
     console.log(result);                         
     console.log(Object.fromEntries(result));                         
 }
